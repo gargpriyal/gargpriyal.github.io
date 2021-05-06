@@ -76,7 +76,7 @@ function translateInput() {
             output = playfair(input, translation, key);
             break;
         case "vigenere":
-            document.getElementById("explanation").innerHTML = "Vigenere cipher is a polyalphabetic substitution. Using the key provided by the user, each of the letters of the message is shifted by the corresponding key value.";
+            document.getElementById("explanation").innerHTML = "vigenere explanation.";
             document.querySelectorAll(".keyClass").forEach(element => {
                 element.style.display = "inline";
             });
@@ -140,6 +140,7 @@ function sha1(input, translation) {
 function vigenere(input, translation, key) {
     input = input.toUpperCase();
     key = key.toUpperCase();
+
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let numbersOfKey = [];
     for (let i = 0; i < key.length; i++) {
@@ -149,7 +150,8 @@ function vigenere(input, translation, key) {
             }
         }
     }
-    console.log(numbersOfKey);
+
+
     let output = "";
 
     switch(translation) {
@@ -157,6 +159,7 @@ function vigenere(input, translation, key) {
             for (let i = 0; i < input.length; i++) {
                 if (!alphabet.includes(input.charAt(i))) {
                     output += input.charAt(i);
+                    continue;
                 }
                 // find the number of letters you need to shift the input by
                 let shift = numbersOfKey[i % numbersOfKey.length];
@@ -169,10 +172,10 @@ function vigenere(input, translation, key) {
             }
             return output;
         case "decrypt":
-            if (!alphabet.includes(input.charAt(i))) {
-                output += input.charAt(i);
-            }
             for (let i = 0; i < input.length; i++) {
+                if (!alphabet.includes(input.charAt(i))) {
+                    output += input.charAt(i);
+                }
                 let shift = 26 - numbersOfKey[i % numbersOfKey.length];
                 for (let j = 0; j < alphabet.length; j++) {
                     if (input.charAt(i) == alphabet.charAt(j)) {
