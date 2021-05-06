@@ -98,6 +98,16 @@ function translateInput() {
         });
     }
 
+    if (input.toUpperCase() == "DORYTO") {
+        document.querySelectorAll(".doryto").forEach(element => {
+            element.style.display = "inline";
+        });
+    } else {
+        document.querySelectorAll(".doryto").forEach(element => {
+            element.style.display = "none";
+        });
+    }
+
     document.getElementById("output").value = output;
     
 }
