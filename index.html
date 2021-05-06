@@ -1,0 +1,85 @@
+# gargpriyal.github.io
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HACS208Z Cipher Website</title>
+        <meta name="description" content="Website Made by Priyal Garg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1>Encrypting/Decrypting Messages</h1>
+        <p>By Priyal Garg</p>
+        <img src="billcipher.png" alt="BillCipher" class="secret" width="200" height="165" style="display:none">
+
+
+        <form>
+            <label for="ciphers">Choose a cipher:</label>
+            <select name="ciphers" id="ciphers" onchange="translateInput()">
+              <option value="morse">Morse</option>
+              <option value="hill">Hill</option>
+              <option value="foursquare">Foursquare</option>
+              <option value="caesar">Caesar</option>
+              <option value="piglatin">Pig Latin</option>
+              <option value="playfair">Playfair</option>
+              <option value="vigenere">Vigenere</option>
+              <!-- <option value="sha1">SHA-1</option> -->
+
+
+            </select>
+
+          </form>
+          
+
+        <form>
+
+            <!-- <input type="radio" id="caesar" name="cipher" value="morse" onclick="translateInput()" checked>
+            <label for="caesar">Morse</label>
+            <br>
+            <input type="radio" id="hill" name="cipher" value="hill" onclick="translateInput()">
+            <label for="hill">Hill</label>
+            <br>
+            <input type="radio" id="foursquare" name="cipher" value="foursquare" onclick="translateInput()">
+            <label for="foursquare">Foursquare</label>
+            <br> -->
+
+
+            <input type="text" class="keyClass" id="key" name="key" oninput="translateInput()" style="display:none">
+            <label for="key" class="keyClass" style="display:none">Key</label>
+
+            <br>
+
+            <input type="radio" id="encrypt" class="translation" name="translation" value="encrypt" onclick="translateInput()" checked style="display:inline">
+            <label for="encrypt" class="translation" style="display:inline">Encrypt</label>
+            <br>
+            <input type="radio" id="decrypt" class="translation" name="translation" value="decrypt" onclick="translateInput()" style="display:inline">
+            <label for="decrypt"  class="translation" style="display:inline">Decrypt</label>
+            <br>
+
+            <br>
+
+            <textarea class="io" id="input" name="input" cols="56" rows="6" oninput="translateInput()"></textarea>
+            <label for="input">Input:</label>
+            <br>
+            <textarea class="io" id="output" name="output" cols="56" rows="6" readonly></textarea>
+            <label for="output">Output:</label>
+
+            <button type="button" id="switch" onclick="buttonPressed()">↑↓</button>
+
+            <p id="explanation">Explanation</p>
+
+
+
+
+        </form>
+        <script src="main.js" async defer></script>
+    </body>
+</html>
