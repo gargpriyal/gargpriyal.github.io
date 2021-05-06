@@ -76,7 +76,7 @@ function translateInput() {
             output = playfair(input, translation, key);
             break;
         case "vigenere":
-            document.getElementById("explanation").innerHTML = "vigenere explanation.";
+            document.getElementById("explanation").innerHTML = "Vigenere cipher is a polyalphabetic substitution. Using the key provided by the user, each of the letters of the message is shifted by the corresponding key value.";
             document.querySelectorAll(".keyClass").forEach(element => {
                 element.style.display = "inline";
             });
